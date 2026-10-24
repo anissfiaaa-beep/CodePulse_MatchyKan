@@ -70,27 +70,94 @@ MatchyKan FutureReady brings career exploration, skill signals, resume-based ski
 ```text
 .
 ├── artifacts/
-│   ├── matchykan-futureready/   # React/Vite web application
-│   ├── api-server/              # Express API, resume parsing, AI and signal endpoints
-│   └── mockup-sandbox/          # Component preview workspace
-├── lib/                         # Shared workspace packages and API contracts
-├── attached_assets/             # App images and other assets
-├── test-assets/                 # Synthetic test CV
-├── .env.example                 # Blank local environment-variable template
-├── RUNPOD_SETUP.md              # RunPod setup, privacy, and troubleshooting
-└── README.md
+│   ├── matchykan-futureready/       # Website frontend
+│   │   ├── src/
+│   │   │   ├── App.tsx              # Main navigation, pages, and app state
+│   │   │   ├── pages/
+│   │   │   │   └── career-chat.tsx  # AI career-coach chatbox
+│   │   │   ├── lib/
+│   │   │   │   └── skill-references.ts
+│   │   │   ├── components/          # Shared and UI components
+│   │   │   └── main.tsx             # React entry point
+│   │   ├── public/                  # Public images and static files
+│   │   └── vite.config.ts
+│   ├── api-server/                  # Backend API
+│   │   ├── src/
+│   │   │   ├── app.ts               # Express setup and /api routing
+│   │   │   ├── index.ts             # API server startup
+│   │   │   ├── routes/
+│   │   │   │   ├── workforce.ts     # Career, skills, resume, and chat endpoints
+│   │   │   │   └── health.ts
+│   │   │   └── lib/                 # RunPod configuration and AI request logic
+│   │   └── data/
+│   │       └── trend-snapshots.json # Saved career-signal snapshots
+│   └── mockup-sandbox/              # UI component preview workspace
+├── lib/
+│   ├── api-spec/                    # OpenAPI contract
+│   ├── api-client-react/            # Generated frontend API client
+│   ├── api-zod/                     # Shared request validation and types
+│   └── db/                          # Shared database package
+├── attached_assets/                 # Project images and assets
+├── test-assets/                     # Synthetic test files
+├── README.md
+├── .env.example
+└── RUNPOD_SETUP.md
 ```
 
 ### Architecture
 
 ```text
-User's browser
-      │
-      ├──► MatchyKan web app (React/Vite)
-      │
-      └──► MatchyKan API (Node/Express)
-                  ├──► RSS feeds and career-signal snapshots
-                  └──► RunPod Serverless (Qwen3-8B) for consented AI requests
+MatchyKan FutureReady
+│
+├── Frontend — React + TypeScript + Vite
+│   ├── Pages
+│   │   ├── Home
+│   │   ├── Profile
+│   │   ├── Skills Radar
+│   │   ├── Career Matches
+│   │   ├── Learning Pathway
+│   │   ├── SDG Impact
+│   │   └── AI Career Coach Chat
+│   ├── State and navigation
+│   │   ├── Wouter — page navigation
+│   │   ├── TanStack Query — API data and requests
+│   │   └── Browser local storage — profile, language, pathway, progress
+│   └── API client — generated from the shared API specification
+│
+├── Backend — Node.js + Express
+│   ├── Health check
+│   │   └── GET /api/healthz
+│   └── Workforce API
+│       ├── GET  /api/workforce/dashboard
+│       ├── POST /api/workforce/refresh
+│       ├── POST /api/workforce/matches
+│       ├── POST /api/workforce/pathway
+│       ├── POST /api/workforce/profile/extract
+│       └── POST /api/workforce/chat
+│
+├── External services and data
+│   ├── RSS feeds — public career and skills signals
+│   ├── trend-snapshots.json — saved signal snapshots
+│   ├── RunPod Serverless / Qwen3-8B
+│   │   ├── CV skill suggestions
+│   │   └── AI career-coach responses
+│   └── LinkedIn and JobStreet — job-search links
+│
+├── Shared packages
+│   ├── OpenAPI specification
+│   ├── Generated React API client
+│   ├── Shared validation and API types
+│   └── Database utilities
+│
+└── Request flow
+    └── Browser
+        └── React frontend
+            └── Generated API client
+                └── Express API
+                    ├── RSS and saved career signals
+                    ├── Career matching and pathway logic
+                    └── RunPod AI requests
+                        └── Response returned to the frontend
 ```
 
 ---
