@@ -274,15 +274,15 @@ Complete this section with the team's actual project experience:
 
 ## Submission Checklist
 
-- [ ] Team name, domain, and SDG track filled in
-- [ ] GitHub repository and live demo links added
-- [ ] Slide deck and demo video links added
-- [ ] Replit use described and proof-of-use document included
-- [ ] RunPod use described and proof-of-use document included
-- [ ] Required preliminary submission and technology declaration completed
-- [ ] Submission files renamed with the team name
-- [ ] Local setup steps verified
-- [ ] No API keys or secrets committed to the repository
+- [/] Team name, domain, and SDG track filled in
+- [/] GitHub repository and live demo links added
+- [/] Slide deck and demo video links added
+- [/] Replit use described and proof-of-use document included
+- [/] RunPod use described and proof-of-use document included
+- [/] Required preliminary submission and technology declaration completed
+- [/] Submission files renamed with the team name
+- [/] Local setup steps verified
+- [/] No API keys or secrets committed to the repository
 
 ## License
 
