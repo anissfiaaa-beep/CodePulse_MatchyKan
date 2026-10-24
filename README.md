@@ -286,4 +286,6 @@ Complete this section with the team's actual project experience:
 
 ## License
 
-No root-level `LICENSE` file is currently included. Add the appropriate license before distributing this project publicly.
+This project is licensed under the Apache License 2.0.
+
+See the LICENSE file for the full license text.
