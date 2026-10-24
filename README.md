@@ -29,9 +29,10 @@
 | --- | --- |
 | GitHub Repository | To be added |
 | Live Demo |https://matchykan-codepulse.replit.app/|
-| RunPod Endpoint | Configured privately; do not publish credentials or private endpoint details |
+| RunPod Endpoint |https://api.runpod.ai/v2/oxc7umn7zvoorn/runsync <img width="1610" height="567" alt="Screenshot 2026-10-25 020213" src="https://github.com/user-attachments/assets/15675d71-da13-4bde-93be-55a6da2e834e" />
+|
 | Slide Deck |https://canva.link/wh6ig8h3obobhwa|
-| Demo Video | To be added |
+| Demo Video | https://youtu.be/3rELGLASEPE?si=L11fzslagiwcXmEh |
 
 ---
 
