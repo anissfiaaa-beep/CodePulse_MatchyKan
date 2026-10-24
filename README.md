@@ -152,12 +152,17 @@ Complete this section with your team's actual Replit usage before submission:
 - **Secrets:** RunPod credentials are configured as Replit Secrets and are not stored in source code.
 
 📄 Proof of use: Add the completed Replit proof-of-use document to your submission materials.
+<img width="1901" height="942" alt="Screenshot 2026-10-24 223223" src="https://github.com/user-attachments/assets/b9c9dd6c-f8d0-4664-9945-caa4bc84939c" />
+<img width="566" height="437" alt="Screenshot 2026-10-24 223258" src="https://github.com/user-attachments/assets/ac6590ee-e54a-459b-8dc6-31a52d08b923" />
+
+
 
 ## How We Use RunPod *(Required)*
 
 RunPod Serverless hosts the `Qwen/Qwen3-8B` model used for CV skill suggestions and AI career-coach responses. Requests are sent by the backend API; the RunPod API key is not exposed to the browser.
 
 📄 Proof of use: Add the completed RunPod proof-of-use document to your submission materials.
+<img width="1902" height="922" alt="Screenshot 2026-10-24 223539" src="https://github.com/user-attachments/assets/3005ff2b-000d-49df-ae13-f4dbd1617e3a" />
 
 ---
 
