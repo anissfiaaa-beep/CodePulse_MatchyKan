@@ -29,7 +29,7 @@
 | --- | --- |
 | GitHub Repository |https://github.com/anissfiaaa-beep/CodePulse_SDC_Hackathon_Submission.git|
 | Live Demo |https://matchykan-codepulse.replit.app/|
-| RunPod Endpoint |https://api.runpod.ai/v2/oxc7umn7zvoorn/runsync <img width="1610" height="567" alt="Screenshot 2026-10-25 020213" src="https://github.com/user-attachments/assets/15675d71-da13-4bde-93be-55a6da2e834e" />|
+| RunPod Endpoint |https://api.runpod.ai/v2/oxc7umn7zvoorn/runsync <img width="1610" height="567" alt="Screenshot 2026-10-25 020213" src="https://github.com/user-attachments/assets/15675d71-da13-4bde-93be-55a6da2e834e" /><img width="1563" height="306" alt="Screenshot 2026-10-25 020957" src="https://github.com/user-attachments/assets/fc3fce18-e1af-44bb-9973-97e484ce2357" />|
 | Slide Deck |https://canva.link/wh6ig8h3obobhwa|
 | Demo Video | https://youtu.be/3rELGLASEPE?si=L11fzslagiwcXmEh |
 
