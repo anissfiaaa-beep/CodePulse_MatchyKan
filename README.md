@@ -28,7 +28,7 @@
 | Resource | Link |
 | --- | --- |
 | GitHub Repository | To be added |
-| Live Demo | To be added |
+| Live Demo | [(https://matchykan-codepulse.replit.app/) |
 | RunPod Endpoint | Configured privately; do not publish credentials or private endpoint details |
 | Slide Deck | To be added |
 | Demo Video | To be added |
