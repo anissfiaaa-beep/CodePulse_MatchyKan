@@ -30,7 +30,7 @@
 | GitHub Repository | To be added |
 | Live Demo |https://matchykan-codepulse.replit.app/|
 | RunPod Endpoint | Configured privately; do not publish credentials or private endpoint details |
-| Slide Deck | To be added |
+| Slide Deck |https://canva.link/wh6ig8h3obobhwa|
 | Demo Video | To be added |
 
 ---
