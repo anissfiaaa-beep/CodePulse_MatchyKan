@@ -195,7 +195,7 @@ Complete this section with the team's actual project experience:
 | Name | Role | GitHub |
 | --- | --- | --- |
 | Lim Sze Yip| 1.Design the finalize structure of the website 2.Adding the CV reader AI , learning path and career matches(LinkedIn and Jobstreet) features| jeremylim00 |
-| Tan Zhen Kai|...|...|
+| Tan Zhen Kai|1.Add chatbox 2.Connect Chatbox with Runpod 3.Prepare video|zktan10-hash|
 | Ong Szien Ping| Configure CV reader AI and prepare pitch deck|shaneong700|
 | Anis Sofia|Team leader, design the base of the website and distribute the tasks|anissfiaaa-beep|
 | Ummul Salmah |prepare pitch deck, testing|ummulsalmahh|
