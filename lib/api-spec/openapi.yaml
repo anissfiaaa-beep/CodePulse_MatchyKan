@@ -1,0 +1,330 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: API specification
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: workforce
+    description: Career exploration and future-skills signals
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      description: Returns server health status
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+  /workforce/dashboard:
+    get:
+      operationId: getWorkforceDashboard
+      tags: [workforce]
+      summary: Get current workforce signals and career catalogue
+      responses:
+        "200":
+          description: Dashboard data, including transparent demo or collected evidence
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkforceDashboard"
+  /workforce/refresh:
+    post:
+      operationId: refreshWorkforceSignals
+      tags: [workforce]
+      summary: Refresh public technology-news evidence
+      responses:
+        "200":
+          description: Updated dashboard data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkforceDashboard"
+        "502":
+          description: Public news feed could not be refreshed
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /workforce/matches:
+    post:
+      operationId: matchWorkforceRoles
+      tags: [workforce]
+      summary: Match a learner profile to future roles
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LearnerProfile"
+      responses:
+        "200":
+          description: Ranked roles with explainable skill overlap and gaps
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/CareerMatch"
+  /workforce/pathway:
+    post:
+      operationId: buildWorkforcePathway
+      tags: [workforce]
+      summary: Build an actionable learning pathway for a role
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PathwayInput"
+      responses:
+        "200":
+          description: Ordered learning steps and estimated effort
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LearningPathway"
+  /workforce/profile/extract:
+    post:
+      operationId: extractProfileSkills
+      tags: [workforce]
+      summary: Extract recognized skills from an optional CV after consent
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/CvUploadInput"
+      responses:
+        "200":
+          description: Recognized skill names only
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CvSkills"
+        "400":
+          description: Consent missing, unsupported file, or invalid upload
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+  /workforce/chat:
+    post:
+      operationId: chatWithCareerCoach
+      tags: [workforce]
+      summary: Ask the AI career coach, optionally using an uploaded CV
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/CareerChatInput"
+      responses:
+        "200":
+          description: Career coach response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CareerChatReply"
+        "400":
+          description: Invalid message, consent, or uploaded file
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+        "502":
+          description: AI service could not answer
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+      required: [error]
+    SkillSignal:
+      type: object
+      properties:
+        name: { type: string }
+        mentions: { type: integer }
+        index: { type: integer }
+        change: { type: integer }
+        direction: { type: string, enum: [rising, steady, declining, baseline] }
+        evidence:
+          type: array
+          items: { $ref: "#/components/schemas/EvidenceItem" }
+      required: [name, mentions, index, change, direction, evidence]
+    EvidenceItem:
+      type: object
+      properties:
+        title: { type: string }
+        source: { type: string }
+        url: { type: string }
+        publishedAt: { type: ["string", "null"] }
+        summary: { type: string }
+      required: [title, source, url, publishedAt, summary]
+    Sdg:
+      type: object
+      properties:
+        id: { type: integer }
+        title: { type: string }
+      required: [id, title]
+    CareerRole:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        summary: { type: string }
+        skills:
+          type: array
+          items: { type: string }
+        sdgs:
+          type: array
+          items: { $ref: "#/components/schemas/Sdg" }
+        category: { type: string }
+      required: [id, title, summary, skills, sdgs, category]
+    RoleForecast:
+      type: object
+      properties:
+        roleId: { type: string }
+        title: { type: string }
+        index: { type: integer }
+        change: { type: integer }
+        direction: { type: string, enum: [rising, steady, declining, baseline] }
+      required: [roleId, title, index, change, direction]
+    WorkforceDashboard:
+      type: object
+      properties:
+        capturedAt: { type: string }
+        sourceMode: { type: string, enum: [demo, public-rss] }
+        snapshotCount: { type: integer }
+        skills:
+          type: array
+          items: { $ref: "#/components/schemas/SkillSignal" }
+        evidence:
+          type: array
+          items: { $ref: "#/components/schemas/EvidenceItem" }
+        roles:
+          type: array
+          items: { $ref: "#/components/schemas/CareerRole" }
+        forecasts:
+          type: array
+          items: { $ref: "#/components/schemas/RoleForecast" }
+      required: [capturedAt, sourceMode, snapshotCount, skills, evidence, roles, forecasts]
+    LearnerProfile:
+      type: object
+      properties:
+        name: { type: string }
+        experience: { type: string }
+        interests: { type: string }
+        skills:
+          type: array
+          items: { type: string }
+        sdgs:
+          type: array
+          items: { type: integer }
+        scenario: { type: string, enum: [slight, moderate] }
+      required: [skills, sdgs, scenario]
+    CareerMatch:
+      type: object
+      properties:
+        role:
+          $ref: "#/components/schemas/CareerRole"
+        score: { type: integer }
+        matchedSkills:
+          type: array
+          items: { type: string }
+        missingSkills:
+          type: array
+          items: { type: string }
+        alignedSdgs:
+          type: array
+          items: { $ref: "#/components/schemas/Sdg" }
+        explanation: { type: string }
+      required: [role, score, matchedSkills, missingSkills, alignedSdgs, explanation]
+    PathwayInput:
+      type: object
+      properties:
+        roleId: { type: string }
+        skills:
+          type: array
+          items: { type: string }
+        hoursPerWeek: { type: integer, minimum: 1, maximum: 40 }
+      required: [roleId, skills, hoursPerWeek]
+    LearningStep:
+      type: object
+      properties:
+        id: { type: string }
+        title: { type: string }
+        description: { type: string }
+        duration: { type: string }
+        hours: { type: integer }
+        resourceUrl: { type: string }
+        deliverable: { type: string }
+        completed: { type: boolean }
+      required: [id, title, description, duration, hours, resourceUrl, deliverable, completed]
+    LearningPathway:
+      type: object
+      properties:
+        role:
+          $ref: "#/components/schemas/CareerRole"
+        totalHours: { type: integer }
+        steps:
+          type: array
+          items: { $ref: "#/components/schemas/LearningStep" }
+      required: [role, totalHours, steps]
+    CvUploadInput:
+      type: object
+      properties:
+        consent: { type: string, enum: ["true"] }
+        cv:
+          type: string
+          format: binary
+      required: [consent, cv]
+    CvSkills:
+      type: object
+      properties:
+        skills:
+          type: array
+          items: { type: string }
+        note: { type: string }
+      required: [skills, note]
+    CareerChatInput:
+      type: object
+      properties:
+        message: { type: string, minLength: 1, maxLength: 2000 }
+        history:
+          type: string
+          description: JSON array of recent user and assistant messages
+        consent: { type: string, enum: ["true"] }
+        cv:
+          type: string
+          format: binary
+      required: [message, history, consent]
+    CareerChatReply:
+      type: object
+      properties:
+        reply: { type: string }
+      required: [reply]
+
