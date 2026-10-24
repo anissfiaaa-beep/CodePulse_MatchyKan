@@ -97,10 +97,10 @@ User's browser
 
 ## How to Run
 
-### Option 1 — Run on Replit (Recommended)
+### Option 1 — Run on Replit 
 
 1. Open the MatchyKan FutureReady Replit.
-2. Add `RUNPOD_API_KEY` and `RUNPOD_ENDPOINT_ID` under **Tools → Secrets** to enable RunPod-powered resume suggestions and AI chat.
+2. Add `RUNPOD_API_KEY` and `RUNPOD_ENDPOINT_ID` under Tools -> Secrets to enable RunPod-powered resume suggestions and AI chat.
 3. Start the configured API and web workflows.
 
 Do not put API credentials in frontend code or in a `VITE_` variable. See [`RUNPOD_SETUP.md`](RUNPOD_SETUP.md) for configuration and privacy details.
