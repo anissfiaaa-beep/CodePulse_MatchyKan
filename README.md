@@ -244,7 +244,7 @@ Complete this section with the team's actual project experience:
 
 - What challenges did the team face, and how were they addressed?
   1.We have problem to connect the RunPod to the Replit to run our AI, after a few try with multiple models, we are able to run our AI services.
-  2.Our team have done two prototypes and the hardest part is to combine both website's feature into one to achieve the one we all satisfied.
+  2.Our team have done two prototypes and the hardest part is to combine both website's feature into one to achieve the one we all satisfied but after our meeting we have made our decisions so communication is very important when too much things need to be combine into one.
   
 - What did the team learn from building and testing MatchyKan?
   1.Our team learned that building a product is not just about developing features, it is about solving a real problem for users. Understanding users' needs and   expectations helped the team determine which features were useful and which needed improvement.
