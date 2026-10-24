@@ -16,12 +16,12 @@
 
 | Field | Details |
 | --- | --- |
-| **Team Name** | To be completed |
-| **Team Domain** | To be completed |
-| **SDG Track (1–17)** | To be completed |
-| **Team Leader** | To be completed |
-| **University** | To be completed |
-| **Number of Members** | To be completed |
+| **Team Name** | CodePulse |
+| **Team Domain** | 1 |
+| **SDG Track (1–17)** | 4,8 |
+| **Team Leader** | Anis Sofia |
+| **University** |Universiti Teknologi Malaysia UTM |
+| **Number of Members** | 5|
 
 ## Links
 
@@ -99,7 +99,7 @@ User's browser
 
 ### Option 1 — Run on Replit (Recommended)
 
-1. Open the MatchyKan FutureReady Repl.
+1. Open the MatchyKan FutureReady Replit.
 2. Add `RUNPOD_API_KEY` and `RUNPOD_ENDPOINT_ID` under **Tools → Secrets** to enable RunPod-powered resume suggestions and AI chat.
 3. Start the configured API and web workflows.
 
