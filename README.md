@@ -197,8 +197,8 @@ Complete this section with the team's actual project experience:
 | Lim Sze Yip| 1.Design the finalize structure of the website 2.Adding the CV reader AI , learning path and career matches(LinkedIn and Jobstreet) features| jeremylim00 |
 | Tan Zhen Kai|...|...|
 | Ong Szien Ping|...|...|
-| Anis Sofia|...|...|
-| Ummul Salmah |...|...|
+| Anis Sofia|Team leader, design the base and distribute the works|anissfiaaa|
+| Ummul Salmah |prepare pitch deck|ummulsalmahh|
 
 ---
 
