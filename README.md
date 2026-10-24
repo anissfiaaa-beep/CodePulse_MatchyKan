@@ -147,7 +147,10 @@ node --experimental-strip-types --test artifacts/api-server/tests/runpod-skills.
 
 Complete this section with your team's actual Replit usage before submission:
 
-- **Development:** Describe how the team used the Replit workspace.
+- **Development:
+  1. We used the Replit to generate our website ideas completely after we do it in VS code by sending the zip file via chatbox.
+  2. We ask for suggestions to improve our website interface design and ask it to provide the sources/evidences needed.
+  3. We ask replit for suggestion on what RunPod models it recommend that are suitable for our AI system in the website. 
 - **Hosting:** Add the published app URL and describe the deployment setup.
 - **Secrets:** RunPod credentials are configured as Replit Secrets and are not stored in source code.
 
@@ -159,8 +162,7 @@ Complete this section with your team's actual Replit usage before submission:
 
 ## How We Use RunPod *(Required)*
 
-RunPod Serverless hosts the `Qwen/Qwen3-8B` model used for CV skill suggestions and AI career-coach responses. Requests are sent by the backend API; the RunPod API key is not exposed to the browser.
-
+RunPod Serverless hosts the `Qwen/Qwen3-8B` model used for CV skill suggestions and AI career-coach responses. 
 📄 Proof of use: Add the completed RunPod proof-of-use document to your submission materials.
 <img width="1902" height="922" alt="Screenshot 2026-10-24 223539" src="https://github.com/user-attachments/assets/3005ff2b-000d-49df-ae13-f4dbd1617e3a" />
 
@@ -171,19 +173,32 @@ RunPod Serverless hosts the `Qwen/Qwen3-8B` model used for CV skill suggestions 
 Complete this section with the team's actual project experience:
 
 - What challenges did the team face, and how were they addressed?
+  1.We have problem to connect the RunPod to the Replit to run our AI, after a few try with multiple models, we are able to run our AI services.
+  2.Our team have done two prototypes and the hardest part is to combine both website's feature into one to achieve the one we all satisfied.
+  
 - What did the team learn from building and testing MatchyKan?
+  1.Our team learned that building a product is not just about developing features, it is about solving a real problem for users. Understanding users' needs and   expectations helped the team determine which features were useful and which needed improvement.
+  2.We learned that ideas often need to change during development. Our team learned that an initial idea might not work exactly as expected once it is implemented and tested. Being willing to adjust the design, improve features, and respond to feedback helped make the product more practical and user-friendly.
+  3.Teamwork and communication matter. Our team manages to meet in face-to-face to discuss and work together on the website. We learned that clear communication and collaboration were important for keeping development on track and ensuring that different components worked together as meeting in online does not work as expected.
 
 ## Future Improvements
 
-- [ ] Add more Malaysia-specific career references and continue checking the quality of source evidence.
-- [ ] Improve career guidance and CV review based on feedback from learners.
-- [ ] Add team and submission information, demo links, and proof-of-use documents.
+- Add more Malaysia-specific career references and continue checking the quality of source evidence.(got salary ranges, entry requirements)
+- Improve career guidance and CV review based on feedback from learners.
+- Improve the AI system, using more advance GPU in the RunPod so the reply and CV skills detection can be done faster.
+- Improve AI coach (AI chatbox), allow the AI to help create CV based on their skills. 
+- More personal career matches , not only based on their skills but based on their education , location and interests.
+- Improve our Learning Path interface that allow the users to track their daily learning hours and able to collect badges to encourage them to learn more(like duolingo badges).
 
 ## Team
 
 | Name | Role | GitHub |
 | --- | --- | --- |
-| To be completed | To be completed | To be added |
+| Lim Sze Yip| 1.Design the finalize structure of the website 2.Adding the CV reader AI , learning path and career matches(LinkedIn and Jobstreet) features| jeremylim00 |
+| Tan Zhen Kai|...|...|
+| Ong Szien Ping|...|...|
+| Anis Sofia|...|...|
+| Ummul Salmah |...|...|
 
 ---
 
