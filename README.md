@@ -18,7 +18,7 @@
 | --- | --- |
 | **Team Name** | CodePulse |
 | **Team Domain** | 1 |
-| **SDG Track (1–17)** | 4,8 |
+| **SDG Track (1–17)** | 4,5,8,10 |
 | **Team Leader** | Anis Sofia |
 | **University** |Universiti Teknologi Malaysia UTM |
 | **Number of Members** | 5|
