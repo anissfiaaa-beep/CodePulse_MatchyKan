@@ -231,6 +231,9 @@ Complete this section with your team's actual Replit usage before submission:
 
 RunPod Serverless hosts the `Qwen/Qwen3-8B` model used for CV skill suggestions and AI career-coach responses. 
 📄 Proof of use: Add the completed RunPod proof-of-use document to your submission materials.
+<img width="783" height="382" alt="Screenshot 2026-10-25 020319" src="https://github.com/user-attachments/assets/cdff24f5-a783-40b9-adb9-e7fbe0665120" />
+<img width="1588" height="755" alt="Screenshot 2026-10-25 020314" src="https://github.com/user-attachments/assets/cf2f83b8-0c63-4ad3-b311-5f109e4fa401" />
+<img width="783" height="382" alt="Screenshot 2026-10-25 020319" src="https://github.com/user-attachments/assets/bd1e71be-319a-4bbb-8d92-a50d614d788c" />
 <img width="1902" height="922" alt="Screenshot 2026-10-24 223539" src="https://github.com/user-attachments/assets/3005ff2b-000d-49df-ae13-f4dbd1617e3a" />
 
 ---
